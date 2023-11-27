@@ -50,7 +50,7 @@ public class Splash extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(204, 0, 51));
         jLabel2.setText("InvSys");
 
-        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\ASUS\\Downloads\\dbim.png")); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\ASUS\\Downloads\\InventoryImg\\dbim.png")); // NOI18N
         jLabel3.setText("jLabel3");
 
         jLabel4.setFont(new java.awt.Font("Century Gothic", 1, 30)); // NOI18N

@@ -63,7 +63,7 @@
                           </Group>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="jButton1" min="-2" pref="117" max="-2" attributes="0"/>
+                          <Component id="AddBt" min="-2" pref="117" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jButton2" min="-2" pref="117" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
@@ -106,7 +106,7 @@
                           </Group>
                           <EmptySpace min="-2" pref="125" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jButton1" alignment="3" min="-2" pref="39" max="-2" attributes="0"/>
+                              <Component id="AddBt" alignment="3" min="-2" pref="39" max="-2" attributes="0"/>
                               <Component id="jButton2" alignment="3" min="-2" pref="39" max="-2" attributes="0"/>
                               <Component id="jButton3" alignment="3" min="-2" pref="39" max="-2" attributes="0"/>
                           </Group>
@@ -250,7 +250,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton1">
+        <Component class="javax.swing.JButton" name="AddBt">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="0" green="0" red="0" type="rgb"/>

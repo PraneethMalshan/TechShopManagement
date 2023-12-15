@@ -13,6 +13,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 import net.proteanit.sql.DbUtils;
 
 /**
@@ -124,17 +125,21 @@ public class Product extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Century Gothic", 1, 24)); // NOI18N
         jLabel5.setText("Name");
 
-        ProdId.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        ProdId.setFont(new java.awt.Font("Century Gothic", 1, 20)); // NOI18N
+        ProdId.setForeground(new java.awt.Color(255, 0, 51));
 
-        ProdName.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        ProdName.setFont(new java.awt.Font("Century Gothic", 1, 20)); // NOI18N
+        ProdName.setForeground(new java.awt.Color(255, 0, 51));
 
         jLabel6.setBackground(new java.awt.Color(255, 255, 255));
         jLabel6.setFont(new java.awt.Font("Century Gothic", 1, 24)); // NOI18N
         jLabel6.setText("Quantity");
 
-        ProdQty.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        ProdQty.setFont(new java.awt.Font("Century Gothic", 1, 20)); // NOI18N
+        ProdQty.setForeground(new java.awt.Color(255, 0, 51));
 
-        ProdDesc.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        ProdDesc.setFont(new java.awt.Font("Century Gothic", 1, 20)); // NOI18N
+        ProdDesc.setForeground(new java.awt.Color(255, 0, 51));
 
         jLabel7.setBackground(new java.awt.Color(255, 255, 255));
         jLabel7.setFont(new java.awt.Font("Century Gothic", 1, 24)); // NOI18N
@@ -144,7 +149,8 @@ public class Product extends javax.swing.JFrame {
         jLabel8.setFont(new java.awt.Font("Century Gothic", 1, 24)); // NOI18N
         jLabel8.setText("Category");
 
-        CatCb.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        CatCb.setFont(new java.awt.Font("Century Gothic", 1, 20)); // NOI18N
+        CatCb.setForeground(new java.awt.Color(255, 0, 51));
         CatCb.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         AddBtn.setBackground(new java.awt.Color(0, 0, 0));
@@ -204,6 +210,11 @@ public class Product extends javax.swing.JFrame {
         ProductTbl.setIntercellSpacing(new java.awt.Dimension(0, 0));
         ProductTbl.setRowHeight(30);
         ProductTbl.setSelectionBackground(new java.awt.Color(0, 0, 0));
+        ProductTbl.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ProductTblMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(ProductTbl);
 
         jPanel3.setBackground(new java.awt.Color(0, 0, 0));
@@ -391,6 +402,15 @@ public class Product extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_DeleteBtnMouseClicked
+
+    private void ProductTblMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ProductTblMouseClicked
+        DefaultTableModel model = (DefaultTableModel)ProductTbl.getModel();
+        int Myindex = ProductTbl.getSelectedRow();
+        ProdId.setText(model.getValueAt(Myindex, 0).toString());
+        ProdName.setText(model.getValueAt(Myindex, 1).toString());
+        ProdQty.setText(model.getValueAt(Myindex, 2).toString());
+        ProdDesc.setText(model.getValueAt(Myindex, 3).toString());
+    }//GEN-LAST:event_ProductTblMouseClicked
 
     /**
      * @param args the command line arguments

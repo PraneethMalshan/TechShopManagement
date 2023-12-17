@@ -32,7 +32,7 @@ public class Product extends javax.swing.JFrame {
     
     Connection Con = null;
     Statement St = null;
-    ResultSet Rs = null;
+    ResultSet Rs = null; 
     
     
 

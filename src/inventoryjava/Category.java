@@ -47,7 +47,7 @@ public class Category extends javax.swing.JFrame {
         CatId = new javax.swing.JTextField();
         CatName = new javax.swing.JTextField();
         AddBtn = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        EditBtn = new javax.swing.JButton();
         DeleteBtn = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -138,13 +138,18 @@ public class Category extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setBackground(new java.awt.Color(0, 0, 0));
-        jButton2.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(204, 204, 204));
-        jButton2.setText("Edit");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        EditBtn.setBackground(new java.awt.Color(0, 0, 0));
+        EditBtn.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
+        EditBtn.setForeground(new java.awt.Color(204, 204, 204));
+        EditBtn.setText("Edit");
+        EditBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                EditBtnMouseClicked(evt);
+            }
+        });
+        EditBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                EditBtnActionPerformed(evt);
             }
         });
 
@@ -229,7 +234,7 @@ public class Category extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(AddBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(EditBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(DeleteBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -263,7 +268,7 @@ public class Category extends javax.swing.JFrame {
                         .addGap(125, 125, 125)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(AddBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(EditBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(DeleteBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(31, 31, 31)
                         .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -298,9 +303,9 @@ public class Category extends javax.swing.JFrame {
         }
     }
     
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void EditBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditBtnActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_EditBtnActionPerformed
 
     private void DeleteBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteBtnActionPerformed
         // TODO add your handling code here:
@@ -360,6 +365,25 @@ public class Category extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_DeleteBtnMouseClicked
 
+    private void EditBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EditBtnMouseClicked
+        if (CatId.getText().isEmpty()||CatName.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Missing Information");
+        }
+        else {
+            
+                try{
+                    Con = DriverManager.getConnection("jdbc:derby://localhost:1527/invdb","root","1234");
+                    String UpdateQuery = "update root.CATEGORYTBL set CATNAME='"+CatName.getText().toString()+"'"+" where CATID ="+CatId.getText();
+                    Statement Add = Con.createStatement();
+                    Add.executeUpdate(UpdateQuery);
+                    JOptionPane.showMessageDialog(this, "Category Updated Successfully.!");
+                    SelectCat();
+                }catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+    }//GEN-LAST:event_EditBtnMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -401,7 +425,7 @@ public class Category extends javax.swing.JFrame {
     private javax.swing.JTextField CatName;
     private javax.swing.JTable CategoryTbl;
     private javax.swing.JButton DeleteBtn;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton EditBtn;
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

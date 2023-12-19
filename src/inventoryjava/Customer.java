@@ -118,15 +118,15 @@ public class Customer extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Century Gothic", 1, 24)); // NOI18N
         jLabel5.setText("Name");
 
-        CustId.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
+        CustId.setFont(new java.awt.Font("Century Gothic", 1, 22)); // NOI18N
 
-        CustName.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
+        CustName.setFont(new java.awt.Font("Century Gothic", 1, 22)); // NOI18N
 
         jLabel6.setBackground(new java.awt.Color(255, 255, 255));
         jLabel6.setFont(new java.awt.Font("Century Gothic", 1, 24)); // NOI18N
         jLabel6.setText("Phone");
 
-        CustPhone.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
+        CustPhone.setFont(new java.awt.Font("Century Gothic", 1, 22)); // NOI18N
 
         AddBtn.setBackground(new java.awt.Color(0, 0, 0));
         AddBtn.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
@@ -168,7 +168,7 @@ public class Customer extends javax.swing.JFrame {
             }
         });
 
-        CustomerTbl.setFont(new java.awt.Font("Century Gothic", 1, 20)); // NOI18N
+        CustomerTbl.setFont(new java.awt.Font("Century Gothic", 1, 22)); // NOI18N
         CustomerTbl.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -178,7 +178,7 @@ public class Customer extends javax.swing.JFrame {
             }
         ));
         CustomerTbl.setIntercellSpacing(new java.awt.Dimension(0, 0));
-        CustomerTbl.setRowHeight(25);
+        CustomerTbl.setRowHeight(30);
         CustomerTbl.setSelectionBackground(new java.awt.Color(0, 0, 0));
         jScrollPane1.setViewportView(CustomerTbl);
 

@@ -52,7 +52,7 @@ public class Customer extends javax.swing.JFrame {
         AddBtn = new javax.swing.JButton();
         UpdateBtn = new javax.swing.JButton();
         DeleteBtn = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        CusHomeBtn = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         CustomerTbl = new javax.swing.JTable();
         jPanel3 = new javax.swing.JPanel();
@@ -174,13 +174,18 @@ public class Customer extends javax.swing.JFrame {
             }
         });
 
-        jButton4.setBackground(new java.awt.Color(0, 0, 0));
-        jButton4.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(204, 204, 204));
-        jButton4.setText("Home");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        CusHomeBtn.setBackground(new java.awt.Color(0, 0, 0));
+        CusHomeBtn.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
+        CusHomeBtn.setForeground(new java.awt.Color(204, 204, 204));
+        CusHomeBtn.setText("Home");
+        CusHomeBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                CusHomeBtnMouseClicked(evt);
+            }
+        });
+        CusHomeBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                CusHomeBtnActionPerformed(evt);
             }
         });
 
@@ -246,7 +251,7 @@ public class Customer extends javax.swing.JFrame {
                         .addComponent(DeleteBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(124, 124, 124)
-                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(CusHomeBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(55, 55, 55)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 814, Short.MAX_VALUE)
                 .addGap(22, 22, 22))
@@ -282,7 +287,7 @@ public class Customer extends javax.swing.JFrame {
                             .addComponent(UpdateBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(DeleteBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(31, 31, 31)
-                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(CusHomeBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 530, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -322,9 +327,9 @@ public class Customer extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_DeleteBtnActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void CusHomeBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CusHomeBtnActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_CusHomeBtnActionPerformed
 
     private void AddBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AddBtnMouseClicked
         try{
@@ -399,6 +404,11 @@ public class Customer extends javax.swing.JFrame {
         
     }//GEN-LAST:event_CustomerTblMouseClicked
 
+    private void CusHomeBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CusHomeBtnMouseClicked
+        new HomeForm().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_CusHomeBtnMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -436,13 +446,13 @@ public class Customer extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton AddBtn;
+    private javax.swing.JButton CusHomeBtn;
     private javax.swing.JTextField CustId;
     private javax.swing.JTextField CustName;
     private javax.swing.JTextField CustPhone;
     private javax.swing.JTable CustomerTbl;
     private javax.swing.JButton DeleteBtn;
     private javax.swing.JButton UpdateBtn;
-    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

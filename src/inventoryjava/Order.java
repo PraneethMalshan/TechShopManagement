@@ -473,6 +473,25 @@ public class Order extends javax.swing.JFrame {
        
     }
     
+    
+    private void update(){
+        
+        int newqty = oldqty - Integer.valueOf(QtyTb.getText());
+        
+        try{
+            Con = DriverManager.getConnection("jdbc:derby://localhost:1527/invdb","root","1234");
+            String UpdateQuery = "update root.PRODUTTBL set PRODQTY="+newqty+""+" where PRODID ="+productid;
+            Statement Add = Con.createStatement();
+            Add.executeUpdate(UpdateQuery);
+//            JOptionPane.showMessageDialog(this, "Category Updated Successfully.!");
+            SelectProd();
+               }catch (Exception e) {
+                   e.printStackTrace();
+               }
+        
+    }
+    
+    
     private void AddBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AddBtnMouseClicked
 
 //        try{
@@ -541,6 +560,7 @@ public class Order extends javax.swing.JFrame {
         dt.addRow(v);
         total = total + tot ;
         TotalAmTbl.setText("Rs"+total);
+        update();
         i++;
         
         }
@@ -554,13 +574,13 @@ public class Order extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_OrderToHomeActionPerformed
 
-    int flag = 0;
+    int flag = 0,productid,oldqty;
     private void ProductTblMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ProductTblMouseClicked
         DefaultTableModel model = (DefaultTableModel)ProductTbl.getModel();
         int Myindex = ProductTbl.getSelectedRow();
-//        ProdId.setText(model.getValueAt(Myindex, 0).toString());
+        productid = Integer.valueOf(model.getValueAt(Myindex, 0).toString());
         ProdName = model.getValueAt(Myindex, 1).toString();
-//        ProdQty.setText(model.getValueAt(Myindex, 2).toString());
+        oldqty = Integer.valueOf(model.getValueAt(Myindex, 2).toString());
 //        ProdDesc.setText(model.getValueAt(Myindex, 3).toString());
         flag = 1;
     }//GEN-LAST:event_ProductTblMouseClicked

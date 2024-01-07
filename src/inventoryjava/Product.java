@@ -453,7 +453,7 @@ public class Product extends javax.swing.JFrame {
     }//GEN-LAST:event_updateBtnMouseClicked
 
     private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
-        new Login().setVisible(true);
+        new HomeForm().setVisible(true);
         this.dispose();
         
     }//GEN-LAST:event_jButton4MouseClicked

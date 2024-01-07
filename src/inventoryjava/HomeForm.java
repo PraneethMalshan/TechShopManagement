@@ -34,17 +34,17 @@ public class HomeForm extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         ExitBtn = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
+        ProductCart = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
+        UserIcon = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
+        CategoryIcon = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
+        CustomerIcon = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        OrderIcon = new javax.swing.JLabel();
+        LogOutMainForm = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -117,16 +117,26 @@ public class HomeForm extends javax.swing.JFrame {
             .addGap(0, 9, Short.MAX_VALUE)
         );
 
-        jLabel4.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\ASUS\\Downloads\\InventoryImg\\cart.png")); // NOI18N
+        ProductCart.setBackground(new java.awt.Color(255, 255, 255));
+        ProductCart.setIcon(new javax.swing.ImageIcon("C:\\Users\\ASUS\\Downloads\\InventoryImg\\cart.png")); // NOI18N
+        ProductCart.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ProductCartMouseClicked(evt);
+            }
+        });
 
         jLabel5.setBackground(new java.awt.Color(255, 255, 255));
         jLabel5.setFont(new java.awt.Font("Century Gothic", 1, 30)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 0, 51));
         jLabel5.setText("PRODUCT");
 
-        jLabel6.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel6.setIcon(new javax.swing.ImageIcon("C:\\Users\\ASUS\\Downloads\\InventoryImg\\User3.png")); // NOI18N
+        UserIcon.setBackground(new java.awt.Color(255, 255, 255));
+        UserIcon.setIcon(new javax.swing.ImageIcon("C:\\Users\\ASUS\\Downloads\\InventoryImg\\User3.png")); // NOI18N
+        UserIcon.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                UserIconMouseClicked(evt);
+            }
+        });
 
         jLabel7.setBackground(new java.awt.Color(255, 255, 255));
         jLabel7.setFont(new java.awt.Font("Century Gothic", 1, 30)); // NOI18N
@@ -138,29 +148,49 @@ public class HomeForm extends javax.swing.JFrame {
         jLabel8.setForeground(new java.awt.Color(255, 0, 51));
         jLabel8.setText("CATEGORY");
 
-        jLabel9.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel9.setIcon(new javax.swing.ImageIcon("C:\\Users\\ASUS\\Downloads\\InventoryImg\\category4.png")); // NOI18N
+        CategoryIcon.setBackground(new java.awt.Color(255, 255, 255));
+        CategoryIcon.setIcon(new javax.swing.ImageIcon("C:\\Users\\ASUS\\Downloads\\InventoryImg\\category4.png")); // NOI18N
+        CategoryIcon.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                CategoryIconMouseClicked(evt);
+            }
+        });
 
         jLabel10.setBackground(new java.awt.Color(255, 255, 255));
         jLabel10.setFont(new java.awt.Font("Century Gothic", 1, 30)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 0, 51));
         jLabel10.setText("Customer");
 
-        jLabel11.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel11.setIcon(new javax.swing.ImageIcon("C:\\Users\\ASUS\\Downloads\\InventoryImg\\customer6.png")); // NOI18N
+        CustomerIcon.setBackground(new java.awt.Color(255, 255, 255));
+        CustomerIcon.setIcon(new javax.swing.ImageIcon("C:\\Users\\ASUS\\Downloads\\InventoryImg\\customer6.png")); // NOI18N
+        CustomerIcon.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                CustomerIconMouseClicked(evt);
+            }
+        });
 
         jLabel12.setBackground(new java.awt.Color(255, 255, 255));
         jLabel12.setFont(new java.awt.Font("Century Gothic", 1, 30)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(255, 0, 51));
         jLabel12.setText("ORDER");
 
-        jLabel13.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel13.setIcon(new javax.swing.ImageIcon("C:\\Users\\ASUS\\Downloads\\InventoryImg\\order5.png")); // NOI18N
+        OrderIcon.setBackground(new java.awt.Color(255, 255, 255));
+        OrderIcon.setIcon(new javax.swing.ImageIcon("C:\\Users\\ASUS\\Downloads\\InventoryImg\\order5.png")); // NOI18N
+        OrderIcon.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                OrderIconMouseClicked(evt);
+            }
+        });
 
-        jButton1.setBackground(new java.awt.Color(255, 51, 0));
-        jButton1.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(204, 204, 204));
-        jButton1.setText("LogOut");
+        LogOutMainForm.setBackground(new java.awt.Color(255, 51, 0));
+        LogOutMainForm.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
+        LogOutMainForm.setForeground(new java.awt.Color(204, 204, 204));
+        LogOutMainForm.setText("LogOut");
+        LogOutMainForm.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                LogOutMainFormMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -180,21 +210,21 @@ public class HomeForm extends javax.swing.JFrame {
                                 .addComponent(jLabel5))
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGap(129, 129, 129)
-                                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(ProductCart, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(141, 141, 141)
-                        .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(CustomerIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(332, 332, 332)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(LogOutMainForm, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(346, 346, 346)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(UserIcon, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jLabel12)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(10, 10, 10)
-                        .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(OrderIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(115, 115, 115))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
@@ -202,7 +232,7 @@ public class HomeForm extends javax.swing.JFrame {
                     .addComponent(jLabel8)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(43, 43, 43)
-                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(CategoryIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(539, 539, 539))
         );
         jPanel2Layout.setVerticalGroup(
@@ -214,15 +244,15 @@ public class HomeForm extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel5)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(ProductCart, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel7)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(UserIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(34, 34, 34)
                 .addComponent(jLabel8)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(CategoryIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 118, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
@@ -230,14 +260,14 @@ public class HomeForm extends javax.swing.JFrame {
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(jLabel12)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(OrderIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(jLabel10)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(CustomerIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(66, 66, 66))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(LogOutMainForm, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(38, 38, 38)))
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -262,6 +292,48 @@ public class HomeForm extends javax.swing.JFrame {
         System.exit(0);
         
     }//GEN-LAST:event_ExitBtnMouseClicked
+
+    private void ProductCartMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ProductCartMouseClicked
+        
+        new Product().setVisible(true);
+        this.dispose();
+        
+    }//GEN-LAST:event_ProductCartMouseClicked
+
+    private void UserIconMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_UserIconMouseClicked
+        
+         new User().setVisible(true);
+        this.dispose();
+        
+    }//GEN-LAST:event_UserIconMouseClicked
+
+    private void CustomerIconMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CustomerIconMouseClicked
+        
+         new Customer().setVisible(true);
+        this.dispose();
+        
+    }//GEN-LAST:event_CustomerIconMouseClicked
+
+    private void OrderIconMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OrderIconMouseClicked
+        
+         new Order().setVisible(true);
+        this.dispose();
+        
+    }//GEN-LAST:event_OrderIconMouseClicked
+
+    private void CategoryIconMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CategoryIconMouseClicked
+        
+         new Category().setVisible(true);
+        this.dispose();
+        
+    }//GEN-LAST:event_CategoryIconMouseClicked
+
+    private void LogOutMainFormMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LogOutMainFormMouseClicked
+        
+         new Login().setVisible(true);
+        this.dispose();
+        
+    }//GEN-LAST:event_LogOutMainFormMouseClicked
 
     /**
      * @param args the command line arguments
@@ -299,20 +371,20 @@ public class HomeForm extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel CategoryIcon;
+    private javax.swing.JLabel CustomerIcon;
     private javax.swing.JLabel ExitBtn;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton LogOutMainForm;
+    private javax.swing.JLabel OrderIcon;
+    private javax.swing.JLabel ProductCart;
+    private javax.swing.JLabel UserIcon;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;

@@ -49,7 +49,7 @@ public class Category extends javax.swing.JFrame {
         AddBtn = new javax.swing.JButton();
         EditBtn = new javax.swing.JButton();
         DeleteBtn = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        HomeButton = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         CategoryTbl = new javax.swing.JTable();
         jPanel3 = new javax.swing.JPanel();
@@ -168,13 +168,18 @@ public class Category extends javax.swing.JFrame {
             }
         });
 
-        jButton4.setBackground(new java.awt.Color(0, 0, 0));
-        jButton4.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(204, 204, 204));
-        jButton4.setText("Home");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        HomeButton.setBackground(new java.awt.Color(0, 0, 0));
+        HomeButton.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
+        HomeButton.setForeground(new java.awt.Color(204, 204, 204));
+        HomeButton.setText("Home");
+        HomeButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                HomeButtonMouseClicked(evt);
+            }
+        });
+        HomeButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                HomeButtonActionPerformed(evt);
             }
         });
 
@@ -239,7 +244,7 @@ public class Category extends javax.swing.JFrame {
                         .addComponent(DeleteBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(124, 124, 124)
-                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(HomeButton, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(55, 55, 55)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 809, Short.MAX_VALUE)
                 .addGap(22, 22, 22))
@@ -274,7 +279,7 @@ public class Category extends javax.swing.JFrame {
                             .addComponent(EditBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(DeleteBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(31, 31, 31)
-                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(HomeButton, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 151, Short.MAX_VALUE)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -314,9 +319,9 @@ public class Category extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_DeleteBtnActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void HomeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HomeButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_HomeButtonActionPerformed
 
     private void AddBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AddBtnMouseClicked
               try{
@@ -387,6 +392,13 @@ public class Category extends javax.swing.JFrame {
             }
     }//GEN-LAST:event_EditBtnMouseClicked
 
+    private void HomeButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HomeButtonMouseClicked
+        
+         new HomeForm().setVisible(true);
+        this.dispose();
+        
+    }//GEN-LAST:event_HomeButtonMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -429,7 +441,7 @@ public class Category extends javax.swing.JFrame {
     private javax.swing.JTable CategoryTbl;
     private javax.swing.JButton DeleteBtn;
     private javax.swing.JButton EditBtn;
-    private javax.swing.JButton jButton4;
+    private javax.swing.JButton HomeButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

@@ -28,6 +28,7 @@ public class Product extends javax.swing.JFrame {
     public Product() {
         initComponents();
         SelectProd();
+        GetCat();
     }
     
     Connection Con = null;
@@ -156,7 +157,11 @@ public class Product extends javax.swing.JFrame {
 
         CatCb.setFont(new java.awt.Font("Century Gothic", 1, 20)); // NOI18N
         CatCb.setForeground(new java.awt.Color(255, 0, 51));
-        CatCb.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        CatCb.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CatCbActionPerformed(evt);
+            }
+        });
 
         AddBtn.setBackground(new java.awt.Color(0, 0, 0));
         AddBtn.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
@@ -361,6 +366,22 @@ public class Product extends javax.swing.JFrame {
         }
     }
     
+    private void GetCat() {
+        try {
+            Con = DriverManager.getConnection("jdbc:derby://localhost:1527/invdb","root","1234");
+              St = Con.createStatement();
+              String query = "select * from root.CATEGORYTBL";
+              Rs = St.executeQuery(query);
+              while(Rs.next()) {
+                  String MyCat = Rs.getString("CATNAME");
+                  CatCb.addItem(MyCat);
+              }
+            
+        } catch(Exception e) {
+            
+        }
+    }
+    
     private void updateBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateBtnActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_updateBtnActionPerformed
@@ -457,6 +478,10 @@ public class Product extends javax.swing.JFrame {
         this.dispose();
         
     }//GEN-LAST:event_jButton4MouseClicked
+
+    private void CatCbActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CatCbActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CatCbActionPerformed
 
     /**
      * @param args the command line arguments
